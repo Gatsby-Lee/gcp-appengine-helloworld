@@ -1,6 +1,8 @@
 GAE - Flask Standard
 ====================
 
+ref: https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env
+
 이상한 경험들
 ----------
 
