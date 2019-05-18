@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     flask_version = flask.__version__
-    return 'Flask %s - GoogleAppEngine(GAE) Standard - v1.2' % flask_version
+    return 'Flask %s - GoogleAppEngine(GAE) Standard - v1.3' % flask_version
 
 
 if __name__ == '__main__':
