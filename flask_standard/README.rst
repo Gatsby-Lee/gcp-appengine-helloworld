@@ -13,26 +13,28 @@ ref: https://cloud.google.com/appengine/docs/standard/python/getting-started/pyt
 * `./lib`에 package를 installing 할때 `pip install -t lib -r requirement.txt` 하게 되는데, 이때 사용하는 pip은 python27 또는 python37 각각 맞는 버젼을 사용해야 한다. python37으로 deploying 하면서 pip2.7으로 package를 installing 하면 안 되는듯.
 
 
-Local Dev
----------
+Local Dev - python3.7
+---------------------
 
 .. code-block:: bash
 
     cd /home/web
     git clone https://github.com/Gatsby-Lee/gcp-appengine-helloworld
     cd gcp-appengine-helloworld/flask_standard
-    dev_appserver.py app.yaml
+    dev_appserver.py app37.yaml
     # open browser with http://localhost:8080/
 
 
-Deploying
----------
+Deploying - python3.7
+---------------------
 
 .. code-block:: bash
 
-    ## --- Deploying
-    pip install -t lib -r requirement.txt
-    gcloud app deploy app.yaml
+    cd /home/web/gcp-appengine-helloworld/flask_standard
+    # .venv is in .gcloudignore, so it won't be uploaded to GCS 
+    python3.7 -m venv .venv
+    ./venv/bin/pip install -t lib -r requirements.txt
+    gcloud app deploy app37.yaml
     gcloud app browse
 
 
