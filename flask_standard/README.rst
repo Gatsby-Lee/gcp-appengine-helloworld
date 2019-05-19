@@ -1,4 +1,4 @@
-GAE - Flask Standard
+GAE Standard - Flask
 ====================
 
 ref: https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env
@@ -31,7 +31,7 @@ Deploying - python3.7
 .. code-block:: bash
 
     cd /home/web/gcp-appengine-helloworld/flask_standard
-    # .venv is in .gcloudignore, so it won't be uploaded to GCS 
+    # .venv is in .gcloudignore, so it won't be uploaded to GCS
     python3.7 -m venv .venv
     ./venv/bin/pip install -t lib -r requirements.txt
     gcloud app deploy app37.yaml
