@@ -1,4 +1,4 @@
 Google AppEngine ( GAE ) - Hello World
 ======================================
 
-* python3.7
+`How to Setup gcloud SDK on OSX <https://github.com/Gatsby-Lee/DevOps/blob/master/setup-gcp-python.rst#download--install-sdk-gcloud>`_
