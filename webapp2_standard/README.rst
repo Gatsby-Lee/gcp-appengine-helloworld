@@ -29,9 +29,10 @@ Deploying - python3.7
 
 .. code-block:: bash
 
+    cd /home/web/gcp-appengine-helloworld
+    python3.7 -m venv .venv
     cd /home/web/gcp-appengine-helloworld/webapp2_standard
     # .venv is in .gcloudignore, so it won't be uploaded to GCS
-    python3.7 -m venv .venv
-    ./venv/bin/pip install -t lib -r requirements.txt
+    ../.venv/bin/pip install -t lib -r requirements.txt
     gcloud app deploy app37.yaml
     gcloud app browse
