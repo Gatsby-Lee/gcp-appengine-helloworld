@@ -4,11 +4,8 @@ GAE Standard - webapp2, cloudstorage
 NOTE!!
 ------
 
-* `GoogleAppEngineCloudStorageClient` doesn't work with python37.
-`runtime` has to be python27
-
-* With `GoogleAppEngineCloudStorageClient`  and `dev_appserver.py`,
-local storage can emulate Cloud Storage. ( no connection to remote cloud storage )
+* `GoogleAppEngineCloudStorageClient` doesn't work with python37. `runtime` has to be python27.
+* With `GoogleAppEngineCloudStorageClient`  and `dev_appserver.py`, local storage can emulate Cloud Storage. ( no connection to remote cloud storage ).
 
 
 How to run - python27
