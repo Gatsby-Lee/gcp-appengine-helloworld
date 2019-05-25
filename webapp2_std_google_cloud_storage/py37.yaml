@@ -1,5 +1,8 @@
 runtime: python37
 
+env_variables:
+  CLOUD_BUCKET_NAME: <your_bucket_name>
+
 handlers:
 - url: /.*
   script: auto

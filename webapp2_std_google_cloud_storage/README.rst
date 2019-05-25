@@ -9,10 +9,13 @@ How to run - python37
     cd /home/web
     git clone https://github.com/Gatsby-Lee/gcp-appengine-helloworld
     cd gcp-appengine-helloworld/webapp2_std_google_cloud_storage
+    # Update environment value of CLOUD_BUCKET_NAME in py37.yaml
     dev_appserver.py app37.yaml dev_appserver.py py37.yaml \
-        --env_var CLOUD_BUCKET_NAME=<bucket_on_cloud_storage> \
         --env_var GOOGLE_APPLICATION_CREDENTIALS=<service_account_json_path>
     # open browser with http://localhost:8080/
+    # Try
+    http://localhost:8080/create
+    http://localhost:8080/delete?q=1558789868
 
 
 References
