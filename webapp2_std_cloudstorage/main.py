@@ -4,6 +4,7 @@ import time
 import cloudstorage
 import webapp2
 
+# this module seems installed with `GoogleAppEngineCloudStorageClient`
 from google.appengine.api import app_identity
 
 
