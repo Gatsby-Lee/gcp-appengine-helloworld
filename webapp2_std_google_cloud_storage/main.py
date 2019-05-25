@@ -1,4 +1,5 @@
 import gzip
+import logging
 import os
 import time
 
@@ -6,6 +7,8 @@ import webapp2
 
 import google.api_core.exceptions
 import google.cloud.storage
+
+LOGGER = logging.getLogger(__name__)
 
 
 BUCKET_NAME = os.environ.get('CLOUD_BUCKET_NAME')
@@ -53,9 +56,28 @@ class DeleteObject(webapp2.RequestHandler):
             pass
         self.redirect('/')
 
+class DetailObject(webapp2.RequestHandler):
+    def get(self):
+        object_key = None
+        try:
+            fname = self.request.get('q')
+            object_key = '{}.txt'.format(fname)
+            blob = BUCKET.blob(object_key)
+            content = blob.download_as_string()
+            self.response.write('## Content of {}'.format(object_key))
+            self.response.write('\n')
+            self.response.write(content)
+        except google.api_core.exceptions.NotFound:
+            LOGGER.warning('%s does NOT exist.', object_key)
+            self.redirect('/')
+        except Exception as e:
+            LOGGER.exception(e)
+            self.redirect('/')
+
 app = webapp2.WSGIApplication([
     ('/', ListObjects),
     ('/create', CreateObject),
     ('/delete', DeleteObject),
+    ('/detail', DetailObject),
     ('/env', ListEnv),
 ], debug=True)
