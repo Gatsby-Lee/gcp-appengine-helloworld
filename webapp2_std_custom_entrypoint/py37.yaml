@@ -3,3 +3,5 @@ runtime: python37
 handlers:
 - url: /.*
   script: auto
+
+entrypoint: gunicorn -b :$PORT gae_app.main:app
